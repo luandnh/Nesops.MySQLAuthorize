@@ -8,7 +8,7 @@ namespace Nesops.MySQLAuthorize.Models
     public class NesopsApplication
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string DisplayName { get; set; }
         public string RedirectUrl { get; set; }

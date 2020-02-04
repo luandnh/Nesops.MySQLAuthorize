@@ -8,12 +8,15 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using MySQLAuthorize.Web.Utils.Filters;
 using Nesops.MySQLAuthorize;
+using NesopsService;
+using NesopsService.Data;
 
 namespace MySQLAuthorize.Web
 {
@@ -29,6 +32,8 @@ namespace MySQLAuthorize.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<NesopsAuthorizeContext>(options => options.UseMySql(Configuration.GetConnectionString("NesopsAuthorizeDB")));
+            ServiceRootConfig.Entry(services, Configuration);
             #region Authorize config
             NesopsAuthorizationConfig.Entry(services, Configuration);
             #endregion

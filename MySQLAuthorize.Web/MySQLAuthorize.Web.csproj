@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Nesops.MySQLAuthorize\Nesops.MySQLAuthorize.csproj" />
+    <ProjectReference Include="..\NesopsService\NesopsService.csproj" />
   </ItemGroup>
 
 

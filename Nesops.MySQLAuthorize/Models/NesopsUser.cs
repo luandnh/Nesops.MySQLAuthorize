@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Nesops.MySQLAuthorize.Models
 {
-    public class NesopsUser : IdentityUser<Guid>
+    public class NesopsUser : IdentityUser<int>
     {
         public NesopsUser()
         {

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Nesops.MySQLAuthorize.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Initital : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +12,8 @@ namespace Nesops.MySQLAuthorize.Migrations
                 name: "AspNetRoles",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(maxLength: 12, nullable: false),
+                    Id = table.Column<int>(maxLength: 12, nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(maxLength: 256, nullable: true),
                     NormalizedName = table.Column<string>(maxLength: 85, nullable: true),
                     ConcurrencyStamp = table.Column<string>(nullable: true),
@@ -28,7 +29,8 @@ namespace Nesops.MySQLAuthorize.Migrations
                 name: "AspNetUsers",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(maxLength: 12, nullable: false),
+                    Id = table.Column<int>(maxLength: 12, nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     UserName = table.Column<string>(maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(maxLength: 85, nullable: true),
                     Email = table.Column<string>(maxLength: 256, nullable: true),
@@ -55,7 +57,7 @@ namespace Nesops.MySQLAuthorize.Migrations
                 {
                     Id = table.Column<int>(maxLength: 12, nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    RoleId = table.Column<Guid>(maxLength: 12, nullable: false),
+                    RoleId = table.Column<int>(maxLength: 12, nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
                 },
@@ -74,14 +76,15 @@ namespace Nesops.MySQLAuthorize.Migrations
                 name: "Application",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     DisplayName = table.Column<string>(nullable: true),
                     RedirectUrl = table.Column<string>(nullable: true),
                     Active = table.Column<bool>(nullable: false),
                     createAt = table.Column<DateTime>(nullable: false),
                     updateAt = table.Column<DateTime>(nullable: false),
-                    OwnerId = table.Column<Guid>(nullable: true)
+                    OwnerId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -100,7 +103,7 @@ namespace Nesops.MySQLAuthorize.Migrations
                 {
                     Id = table.Column<int>(maxLength: 12, nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    UserId = table.Column<Guid>(maxLength: 12, nullable: false),
+                    UserId = table.Column<int>(maxLength: 12, nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
                 },
@@ -122,7 +125,7 @@ namespace Nesops.MySQLAuthorize.Migrations
                     LoginProvider = table.Column<string>(maxLength: 85, nullable: false),
                     ProviderKey = table.Column<string>(maxLength: 85, nullable: false),
                     ProviderDisplayName = table.Column<string>(nullable: true),
-                    UserId = table.Column<Guid>(maxLength: 12, nullable: false)
+                    UserId = table.Column<int>(maxLength: 12, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -139,8 +142,8 @@ namespace Nesops.MySQLAuthorize.Migrations
                 name: "AspNetUserRoles",
                 columns: table => new
                 {
-                    UserId = table.Column<Guid>(maxLength: 12, nullable: false),
-                    RoleId = table.Column<Guid>(maxLength: 12, nullable: false)
+                    UserId = table.Column<int>(maxLength: 12, nullable: false),
+                    RoleId = table.Column<int>(maxLength: 12, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -163,7 +166,7 @@ namespace Nesops.MySQLAuthorize.Migrations
                 name: "AspNetUserTokens",
                 columns: table => new
                 {
-                    UserId = table.Column<Guid>(maxLength: 12, nullable: false),
+                    UserId = table.Column<int>(maxLength: 12, nullable: false),
                     LoginProvider = table.Column<string>(maxLength: 85, nullable: false),
                     Name = table.Column<string>(maxLength: 85, nullable: false),
                     Value = table.Column<string>(nullable: true)

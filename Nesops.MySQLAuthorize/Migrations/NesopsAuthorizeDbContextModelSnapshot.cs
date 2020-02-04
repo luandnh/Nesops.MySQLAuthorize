@@ -17,7 +17,7 @@ namespace Nesops.MySQLAuthorize.Migrations
                 .HasAnnotation("ProductVersion", "3.1.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -30,8 +30,8 @@ namespace Nesops.MySQLAuthorize.Migrations
                     b.Property<string>("ClaimValue")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<Guid>("RoleId")
-                        .HasColumnType("char(12)")
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int")
                         .HasMaxLength(12);
 
                     b.HasKey("Id");
@@ -41,7 +41,7 @@ namespace Nesops.MySQLAuthorize.Migrations
                     b.ToTable("AspNetRoleClaims");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -54,8 +54,8 @@ namespace Nesops.MySQLAuthorize.Migrations
                     b.Property<string>("ClaimValue")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("char(12)")
+                    b.Property<int>("UserId")
+                        .HasColumnType("int")
                         .HasMaxLength(12);
 
                     b.HasKey("Id");
@@ -65,7 +65,7 @@ namespace Nesops.MySQLAuthorize.Migrations
                     b.ToTable("AspNetUserClaims");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
                 {
                     b.Property<string>("LoginProvider")
                         .HasColumnType("varchar(85) CHARACTER SET utf8mb4")
@@ -78,8 +78,8 @@ namespace Nesops.MySQLAuthorize.Migrations
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("char(12)")
+                    b.Property<int>("UserId")
+                        .HasColumnType("int")
                         .HasMaxLength(12);
 
                     b.HasKey("LoginProvider", "ProviderKey");
@@ -89,14 +89,14 @@ namespace Nesops.MySQLAuthorize.Migrations
                     b.ToTable("AspNetUserLogins");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
                 {
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("char(12)")
+                    b.Property<int>("UserId")
+                        .HasColumnType("int")
                         .HasMaxLength(12);
 
-                    b.Property<Guid>("RoleId")
-                        .HasColumnType("char(12)")
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int")
                         .HasMaxLength(12);
 
                     b.HasKey("UserId", "RoleId");
@@ -106,10 +106,10 @@ namespace Nesops.MySQLAuthorize.Migrations
                     b.ToTable("AspNetUserRoles");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
                 {
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("char(12)")
+                    b.Property<int>("UserId")
+                        .HasColumnType("int")
                         .HasMaxLength(12);
 
                     b.Property<string>("LoginProvider")
@@ -130,9 +130,9 @@ namespace Nesops.MySQLAuthorize.Migrations
 
             modelBuilder.Entity("Nesops.MySQLAuthorize.Models.NesopsApplication", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
+                        .HasColumnType("int");
 
                     b.Property<bool>("Active")
                         .HasColumnType("tinyint(1)");
@@ -143,8 +143,8 @@ namespace Nesops.MySQLAuthorize.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<Guid?>("OwnerId")
-                        .HasColumnType("char(12)");
+                    b.Property<int?>("OwnerId")
+                        .HasColumnType("int");
 
                     b.Property<string>("RedirectUrl")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
@@ -164,9 +164,9 @@ namespace Nesops.MySQLAuthorize.Migrations
 
             modelBuilder.Entity("Nesops.MySQLAuthorize.Models.NesopsRole", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("char(12)")
+                        .HasColumnType("int")
                         .HasMaxLength(12);
 
                     b.Property<string>("ConcurrencyStamp")
@@ -198,9 +198,9 @@ namespace Nesops.MySQLAuthorize.Migrations
 
             modelBuilder.Entity("Nesops.MySQLAuthorize.Models.NesopsUser", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("char(12)")
+                        .HasColumnType("int")
                         .HasMaxLength(12);
 
                     b.Property<int>("AccessFailedCount")
@@ -262,7 +262,7 @@ namespace Nesops.MySQLAuthorize.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("Nesops.MySQLAuthorize.Models.NesopsRole", null)
                         .WithMany()
@@ -271,7 +271,7 @@ namespace Nesops.MySQLAuthorize.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
                 {
                     b.HasOne("Nesops.MySQLAuthorize.Models.NesopsUser", null)
                         .WithMany()
@@ -280,7 +280,7 @@ namespace Nesops.MySQLAuthorize.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
                 {
                     b.HasOne("Nesops.MySQLAuthorize.Models.NesopsUser", null)
                         .WithMany()
@@ -289,7 +289,7 @@ namespace Nesops.MySQLAuthorize.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
                 {
                     b.HasOne("Nesops.MySQLAuthorize.Models.NesopsRole", null)
                         .WithMany()
@@ -304,7 +304,7 @@ namespace Nesops.MySQLAuthorize.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
                 {
                     b.HasOne("Nesops.MySQLAuthorize.Models.NesopsUser", null)
                         .WithMany()

@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySQLAuthorize.Web", "MySQLAuthorize.Web\MySQLAuthorize.Web.csproj", "{6216E986-E5C6-42E0-8451-AA36BED38655}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySQLAuthorize.Web", "MySQLAuthorize.Web\MySQLAuthorize.Web.csproj", "{6216E986-E5C6-42E0-8451-AA36BED38655}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nesops.MySQLAuthorize", "Nesops.MySQLAuthorize\Nesops.MySQLAuthorize.csproj", "{75FABFAA-BB9C-46FB-8777-EE3890DDDFC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nesops.MySQLAuthorize", "Nesops.MySQLAuthorize\Nesops.MySQLAuthorize.csproj", "{75FABFAA-BB9C-46FB-8777-EE3890DDDFC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NesopsService", "NesopsService\NesopsService.csproj", "{886527AF-A3CA-4980-AC08-1C4E5AC2DAE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{75FABFAA-BB9C-46FB-8777-EE3890DDDFC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75FABFAA-BB9C-46FB-8777-EE3890DDDFC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75FABFAA-BB9C-46FB-8777-EE3890DDDFC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{886527AF-A3CA-4980-AC08-1C4E5AC2DAE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{886527AF-A3CA-4980-AC08-1C4E5AC2DAE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{886527AF-A3CA-4980-AC08-1C4E5AC2DAE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{886527AF-A3CA-4980-AC08-1C4E5AC2DAE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
