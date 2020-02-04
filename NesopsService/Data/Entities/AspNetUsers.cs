@@ -1,9 +1,10 @@
+using NesopsService.Base.Model;
 using System;
 using System.Collections.Generic;
 
 namespace NesopsService.Data.Entities
 {
-    public partial class AspNetUsers
+    public partial class AspNetUsers : IHaveIdentifier
     {
         public AspNetUsers()
         {

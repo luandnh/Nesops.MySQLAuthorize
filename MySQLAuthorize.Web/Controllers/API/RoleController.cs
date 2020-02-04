@@ -60,9 +60,10 @@ namespace MySQLAuthorize.Web.Controllers.API
             var result = await _authorizeService.CreateRoleAsync(nesopsRole);
             if (result.Succeeded)
                 return Ok(new BaseResponseModel<NesopsRole> { message = "Create Role Successful", data = nesopsRole, code = 200 });
+            var responseModel = new BaseResponseModel<object> { message = "Create Role Fail", code = 400 };
             foreach (var err in result.Errors)
-                ModelState.AddModelError(err.Code, err.Description);
-            return BadRequest(ModelState);
+                responseModel.SetError(err.Code, err.Description);
+            return BadRequest(responseModel);
         }
 #if Debug
         [HttpDelete]
