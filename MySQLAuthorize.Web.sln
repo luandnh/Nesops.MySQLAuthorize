@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySQLAuthorize.Web", "MySQLAuthorize.Web\MySQLAuthorize.Web.csproj", "{6216E986-E5C6-42E0-8451-AA36BED38655}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nesops.MySQLAuthorize", "Nesops.MySQLAuthorize\Nesops.MySQLAuthorize.csproj", "{75FABFAA-BB9C-46FB-8777-EE3890DDDFC2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6216E986-E5C6-42E0-8451-AA36BED38655}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6216E986-E5C6-42E0-8451-AA36BED38655}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6216E986-E5C6-42E0-8451-AA36BED38655}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6216E986-E5C6-42E0-8451-AA36BED38655}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75FABFAA-BB9C-46FB-8777-EE3890DDDFC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75FABFAA-BB9C-46FB-8777-EE3890DDDFC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75FABFAA-BB9C-46FB-8777-EE3890DDDFC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75FABFAA-BB9C-46FB-8777-EE3890DDDFC2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE68D1D1-0244-4D3B-8E10-D96723D4B368}
+	EndGlobalSection
+EndGlobal
